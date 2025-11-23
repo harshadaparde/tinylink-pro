@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TinyLink</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>TinyLink URL Shortener</h2>
+
+
+    <div class="form-box">
+      <input id="url" placeholder="Enter Long URL">
+      <input id="code" placeholder="Custom Code (optional)">
+      <button onclick="createLink()">Create Short Link</button>
+    </div>
+
+  
+    <div class="show-box">
+      <button onclick="loadLinks()">Show All Links</button>
+    </div>
+
+
+    <h3>All Links</h3>
+    <table id="table"></table>
+  </div>
+
+  <script>
+    async function createLink() {
+      const urlInput = document.getElementById("url");
+      const codeInput = document.getElementById("code");
+
+      const url = urlInput.value;
+      const code = codeInput.value;
+
+      if (!url) {
+        alert("Please enter a URL");
+        return;
+      }
+
+      await fetch("/api/links", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ url, code })
+      });
+
+     
+      urlInput.value = "";
+      codeInput.value = "";
+
+      alert("✅ Link created successfully!");
+    }
+
+    async function loadLinks() {
+      const res = await fetch("/api/links");
+      const data = await res.json();
+
+      let html = "<tr><th>Code</th><th>URL</th><th>Clicks</th></tr>";
+
+      data.forEach(link => {
+        html += `
+          <tr>
+            <td>${link.code}</td>
+            <td>${link.url}</td>
+            <td>${link.clicks}</td>
+          </tr>
+        `;
+      });
+
+      document.getElementById("table").innerHTML = html;
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,120 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+
+body {
+  min-height: 100vh;
+  background:black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main Container */
+.container {
+  background: #ffffff;
+  width: 90%;
+  max-width: 650px;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* Headings */
+h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+  color: #333;
+  letter-spacing: 0.5px;
+}
+
+h3 {
+  margin: 20px 0 10px;
+  color: #444;
+}
+
+/* Form Box */
+.form-box {
+  background: #f7f9fc;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+/* Input Fields */
+input {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 8px 0;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+input:focus {
+  border-color: #911d3a;
+  box-shadow: 0 0 0 2px rgba(79, 172, 254, 0.15);
+  outline: none;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: rgb(45, 85, 104);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+th {
+  background: rgb(45, 85, 104);
+  color: white;
+  padding: 12px;
+  font-size: 14px;
+  text-align: center;
+}
+
+td {
+  padding: 11px;
+  font-size: 14px;
+  text-align: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* Table Hover Effect */
+tr:hover td {
+  background: #f5faff;
+}
+
+/* Show Links Button Box */
+.show-box {
+  margin-top: 10px;
+}
